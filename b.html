@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy cookies</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
+
+        body {
+            background: black;
+            margin: auto;
+            width: 1400px;
+            font-family: 'Kirang Haerang', cursive;
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 150%;
+            padding-top: 50px;
+        }
+
+        .img {
+            display: block;
+            margin: auto;
+            padding-top: 65px;
+            padding-bottom: 40px;
+        }
+
+        .cookie {
+            display: inline-block;
+            size: 20%;
+            float: center;
+            text-align: center;
+            margin: auto;
+            cursor: pointer;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .cookie:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 10px white);
+        }
+
+        .paper {
+            background-image: url('img/paper.png');
+            width: 707px;
+            height: 190px;
+            margin: auto;
+            margin-top: -200px;
+        }
+
+        #quote-container {
+            margin: auto;
+            display: block;
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <img class="img" src="img/t2.png">
+    <div><img src="img/click.png"></div>
+    <div class="paper">
+        <div id="quote-container">
+            <p id="quote-text"></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div style="margin: auto;margin-top: 20px;margin-left: 20px;">
+        <img onclick="showRandomQuote()" class="cookie" src="cookie.png">
+        <img onclick="showRandomQuote()" class="cookie down" src="cookie.png">
+        <img onclick="showRandomQuote()" class="cookie" src="cookie.png">
+        <img onclick="showRandomQuote()" class="cookie down" src="cookie.png">
+        <img onclick="showRandomQuote()" class="cookie" src="cookie.png">
+    </div>
+</section>
+
+<script type="text/javascript">
+    const happinessQuotes = [
+        "- 지금 당신에게 필요한건 행복한 기억보다는 71억이죠. 떼돈을 벌게 될 것입니다 -",
+        "- 들숨에 재력 날숨에 명예를 얻게 될 것입니다 -",
+        "- 집에서 나가기 직전에 수업 휴강 문자를 받아보게 될 것입니다 -",
+        "- 웨이팅 맛집에서 딱 마지막 한그릇 남은 대표 메뉴의 주인공이 될 예정입니다 - ",
+        "- 행복= 두둑한 통장, 훌륭한 요리사,그리고 소화력. 그러므로 건강을 잘 챙겨야 합니다 -",
+        "- 건강한 신체에 건강한 정신이 깃든다고 하죠. 운동이 필요합니다 -",
+       
+    ];
+
+    function showRandomQuote() {
+        const quoteContainer = document.getElementById("quote-container");
+        const quoteText = document.getElementById("quote-text");
+
+        const randomIndex = Math.floor(Math.random() * happinessQuotes.length);
+        const randomQuote = happinessQuotes[randomIndex];
+
+        quoteText.textContent = randomQuote;
+        quoteContainer.style.display = "block";
+    }
+</script>
+</body>
+</html>
